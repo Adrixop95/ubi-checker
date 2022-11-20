@@ -21,3 +21,8 @@ jobs:
     
     - name: Build
       run: go build
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: ubi-checker
+        path: ubi-checker
