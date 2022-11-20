@@ -25,7 +25,7 @@ jobs:
     - name: Upload Go test results
       uses: actions/upload-artifact@v3
       with:
-        name: Go-results
+        name: TestResults-results
         path: TestResults.json
 
     - name: Build application
