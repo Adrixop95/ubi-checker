@@ -21,11 +21,11 @@ func main() {
 	repository_id := flag.String("id", "615bcf606feffc5384e8452e", "Container ID")
 	flag.Parse()
 
-	fmt.Println(telegraf_message(*repository_id))
+	fmt.Println(TelegrafMessage(*repository_id))
 
 }
 
-func telegraf_message(id string) string {
+func TelegrafMessage(id string) string {
 	resp, err := http.Get("https://catalog.redhat.com/api/containers/v1/repositories/id/" + id)
 	if err != nil {
 		log.Fatalln(err)

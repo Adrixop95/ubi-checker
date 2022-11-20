@@ -19,10 +19,20 @@ jobs:
     - name: Install dependencies
       run: go get .
     
-    - name: Build
+    - name: Test with Go
+      run: go test -json > TestResults.json
+
+    - name: Upload Go test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: Go-results
+        path: TestResults.json
+
+    - name: Build application
       run: go build
 
-    - uses: actions/upload-artifact@v3
+    - name: Upload application package
+      uses: actions/upload-artifact@v3
       with:
         name: ubi-checker
         path: ubi-checker
