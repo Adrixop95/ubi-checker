@@ -8,6 +8,7 @@ import (
 )
 
 func TestCorrectTelegrafMessage(t *testing.T) {
+	// UBI9 ID
 	msg := TelegrafMessage("615bcf606feffc5384e8452e")
 	expected := "ubi9/ubi"
 
